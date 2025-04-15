@@ -39,7 +39,6 @@ tab1, tab2, tab3 = st.tabs(["🏠 Home", "📊 Dashboard", "🔮 Predict"])
 # ==========================
 # 🏠 Home Tab
 # ==========================
-
 with tab1:
     st.markdown(
         """
@@ -61,7 +60,6 @@ with tab1:
         unsafe_allow_html=True
     )
 
-    # Text in semi-transparent box
     st.markdown("""
     <div style="background-color: rgba(255, 255, 255, 0.85); padding: 30px; border-radius: 10px;">
         <h1 style="color: #FF5733;">🚗 Vehicle Transmission Prediction App</h1>
@@ -84,7 +82,8 @@ with tab1:
 with tab2:
     st.header("📊 Interactive Power BI Dashboard")
     st.markdown("Explore the full vehicle dataset with filters and visuals.")
-    st.markdown("[🔗 View Dashboard](https://your-dashboard-link.com)")
+    st.markdown("[🔗 View Dashboard](https://your-dashboard-link.com)")  # Update this link
+
 
 # ==========================
 # 🔮 Prediction Tab
@@ -94,56 +93,42 @@ with tab3:
 
     st.markdown("""
         <style>
-        /* Form labels like Make, Model, stock_type */
         label, .css-1p05t8e, .css-1cpxqw2, .css-1jy4z1n {
             color: #E74C3C !important;
             font-weight: bold !important;
             font-size: 18px !important;
             text-transform: uppercase;
         }
-
-        /* Slider current value (above handle) */
         .css-1d391kg {
             color: #E74C3C !important;
             font-weight: bold !important;
             font-size: 16px !important;
         }
-
-        /* Slider min/max tick labels (e.g., 0, 200279, 2014, 2024) */
         span[data-testid="stTickBar"] > div {
             color: #E74C3C !important;
             font-weight: bold !important;
             font-size: 16px !important;
         }
-
-        /* Headers (e.g., Prediction, Summary of Input) */
         h1, h2, h3, h4, h5, h6 {
             color: #E74C3C !important;
             font-weight: 700;
         }
-
-        /* Paragraph and markdown text */
         .stMarkdown p {
             color: #000 !important;
             font-weight: 600 !important;
         }
-
-        /* Predicted Transmission output box (st.success) */
         .stAlert-success {
             background-color: #fdecea;
             color: #E74C3C !important;
             font-weight: bold;
             border-left: 6px solid #E74C3C;
         }
-
-        /* Table values in Prediction Probability */
         .stDataFrame div {
             color: #E74C3C !important;
             font-weight: bold;
         }
         </style>
     """, unsafe_allow_html=True)
-
 
     def get_user_input():
         user_data = {}
