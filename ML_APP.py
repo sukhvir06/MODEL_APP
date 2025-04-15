@@ -91,43 +91,9 @@ with tab2:
 with tab3:
     st.header("🔧 Vehicle Input Features")
 
+    # Add a white semi-transparent box (like Home tab)
     st.markdown("""
-        <style>
-        label, .css-1p05t8e, .css-1cpxqw2, .css-1jy4z1n {
-            color: #E74C3C !important;
-            font-weight: bold !important;
-            font-size: 18px !important;
-            text-transform: uppercase;
-        }
-        .css-1d391kg {
-            color: #E74C3C !important;
-            font-weight: bold !important;
-            font-size: 16px !important;
-        }
-        span[data-testid="stTickBar"] > div {
-            color: #E74C3C !important;
-            font-weight: bold !important;
-            font-size: 16px !important;
-        }
-        h1, h2, h3, h4, h5, h6 {
-            color: #E74C3C !important;
-            font-weight: 700;
-        }
-        .stMarkdown p {
-            color: #000 !important;
-            font-weight: 600 !important;
-        }
-        .stAlert-success {
-            background-color: #fdecea;
-            color: #E74C3C !important;
-            font-weight: bold;
-            border-left: 6px solid #E74C3C;
-        }
-        .stDataFrame div {
-            color: #E74C3C !important;
-            font-weight: bold;
-        }
-        </style>
+        <div style="background-color: rgba(255, 255, 255, 0.93); padding: 30px; border-radius: 10px;">
     """, unsafe_allow_html=True)
 
     def get_user_input():
@@ -180,3 +146,6 @@ with tab3:
 
     st.subheader("📈 Prediction Probability")
     st.dataframe(pd.DataFrame([pred_proba], columns=["Manual", "Automatic"]))
+
+    # Close the white box
+    st.markdown("</div>", unsafe_allow_html=True)
