@@ -89,12 +89,12 @@ with tab2:
 # 🔮 Prediction Tab
 # ==========================
 with tab3:
-    st.header("🔧 Vehicle Input Features")
-
-    # Add a white semi-transparent box (like Home tab)
+    # Open white box first
     st.markdown("""
         <div style="background-color: rgba(255, 255, 255, 0.93); padding: 30px; border-radius: 10px;">
     """, unsafe_allow_html=True)
+
+    st.header("🔧 Vehicle Input Features")
 
     def get_user_input():
         user_data = {}
@@ -147,5 +147,5 @@ with tab3:
     st.subheader("📈 Prediction Probability")
     st.dataframe(pd.DataFrame([pred_proba], columns=["Manual", "Automatic"]))
 
-    # Close the white box
+    # Close white box
     st.markdown("</div>", unsafe_allow_html=True)
