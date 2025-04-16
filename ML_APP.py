@@ -91,10 +91,23 @@ with tab2:
 # ==========================
 # 🔮 Prediction Tab
 # ==========================
+# ==========================
+# 🔮 Prediction Tab
+# ==========================
 with tab3:
     with st.container():
+        # ✅ White box with shadow and padding
         st.markdown("""
-            <div style="background-color: rgba(255, 255, 255, 0.85); padding: 30px; border-radius: 10px;">
+        <style>
+            .white-box {
+                background-color: rgba(255, 255, 255, 0.85);
+                padding: 30px;
+                border-radius: 10px;
+                margin-bottom: 20px;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            }
+        </style>
+        <div class="white-box">
         """, unsafe_allow_html=True)
 
         st.header("🔧 Vehicle Input Features")
@@ -150,4 +163,5 @@ with tab3:
         st.subheader("📈 Prediction Probability")
         st.dataframe(pd.DataFrame([pred_proba], columns=["Manual", "Automatic"]))
 
+        # ✅ Close white box
         st.markdown("</div>", unsafe_allow_html=True)
