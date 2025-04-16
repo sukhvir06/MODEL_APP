@@ -1,5 +1,26 @@
 import streamlit as st
-st.set_page_config(page_title="Vehicle Transmission Predictor", layout="wide")  # Must be first Streamlit command
+st.set_page_config(page_title="Vehicle Transmission Predictor", layout="wide")
+
+# ✅ Global background styling for all tabs
+st.markdown(
+    """
+    <style>
+    .stApp {
+         background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                     url("https://goauto-assets.imgix.net/RV/Go-RV-Edmonton.jpg?auto=format&ixlib=react-9.7.0&w=1075");
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+    }
+    .main > div {
+        background-color: rgba(255, 255, 255, 0.93);
+        padding: 2rem;
+        border-radius: 10px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 import pandas as pd
 import numpy as np
@@ -40,26 +61,6 @@ tab1, tab2, tab3 = st.tabs(["🏠 Home", "📊 Dashboard", "🔮 Predict"])
 # 🏠 Home Tab
 # ==========================
 with tab1:
-    st.markdown(
-        """
-        <style>
-        .stApp {
-             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                         url("https://goauto-assets.imgix.net/RV/Go-RV-Edmonton.jpg?auto=format&ixlib=react-9.7.0&w=1075");
-            background-attachment: fixed;
-            background-size: cover;
-            background-position: center;
-        }
-        .main > div {
-            background-color: rgba(255, 255, 255, 0.93);
-            padding: 2rem;
-            border-radius: 10px;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
-
     st.markdown("""
     <div style="background-color: rgba(255, 255, 255, 0.85); padding: 30px; border-radius: 10px;">
         <h1 style="color: #FF5733;">🚗 Vehicle Transmission Prediction App</h1>
@@ -75,21 +76,19 @@ with tab1:
     </div>
     """, unsafe_allow_html=True)
 
-
 # ==========================
 # 📊 Dashboard Tab
 # ==========================
 with tab2:
     st.header("📊 Interactive Power BI Dashboard")
     st.markdown("Explore the full vehicle dataset with filters and visuals.")
-    st.markdown("[🔗 View Dashboard](https://your-dashboard-link.com)")  # Update this link
-
+    st.markdown("[🔗 View Dashboard](https://your-dashboard-link.com)")  # Replace with real URL
 
 # ==========================
 # 🔮 Prediction Tab
 # ==========================
 with tab3:
-    # Open white box first
+    # Open white background box
     st.markdown("""
         <div style="background-color: rgba(255, 255, 255, 0.93); padding: 30px; border-radius: 10px;">
     """, unsafe_allow_html=True)
